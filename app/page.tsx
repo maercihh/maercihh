@@ -1,14 +1,15 @@
 "use client";
+import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, Github, Mail, Play, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { SiteHeader } from "@/components/site-header";
 import { SectionHeading } from "@/components/section-heading";
 
 const projects = [
- { title: "Synthetic Dreams", type: "AI Film / 2025", tone: "from-violet-500/50 via-fuchsia-900/30 to-black", label: "01" },
- { title: "Lumen", type: "Creative Direction / 2025", tone: "from-amber-300/50 via-orange-950/40 to-black", label: "02" },
- { title: "Afterlight", type: "Generative Worlds / 2024", tone: "from-cyan-300/35 via-blue-950/50 to-black", label: "03" },
- { title: "Obscura", type: "AI Image Series / 2024", tone: "from-zinc-300/30 via-zinc-800 to-black", label: "04" }
+  { title: "Synthetic Dreams", type: "AI Film / 2025", tone: "from-violet-500/50 via-fuchsia-900/30 to-black", label: "01" },
+  { title: "Lumen", type: "Creative Direction / 2025", tone: "from-amber-300/50 via-orange-950/40 to-black", label: "02" },
+  { title: "Afterlight", type: "Generative Worlds / 2024", tone: "from-cyan-300/35 via-blue-950/50 to-black", label: "03" },
+  { title: "Obscura", type: "AI Image Series / 2024", tone: "from-zinc-300/30 via-zinc-800 to-black", label: "04" },
 ];
 
 const brands = ["NIKE", "A24", "MONCLER", "SONY", "RIMOWA", "VOGUE", "ADIDAS", "SPOTIFY"];
@@ -19,53 +20,61 @@ export default function Home() {
     <main id="top">
       <SiteHeader />
 
-      <section className="relative flex min-h-screen items-end overflow-hidden px-5 pb-12 pt-36 sm:px-8 md:pb-16">
+      <section className="relative overflow-hidden px-5 pb-12 pt-36 sm:px-8 md:pb-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <motion.div
-          initial="hidden"
-          animate="show"
-          transition={{ staggerChildren: 0.12 }}
-          className="relative mx-auto w-full max-w-7xl"
-        >
-          <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
-            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
-            Independent creative practice — Worldwide
-          </motion.p>
+        <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-end gap-12 lg:grid-cols-[1.25fr_.85fr] lg:items-center">
+          <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }}>
+            <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
+              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
+              Independent creative practice — Worldwide
+            </motion.p>
 
-          <motion.h1 variants={reveal} className="display max-w-6xl text-[18.5vw] font-semibold sm:text-[15.8vw]">
-            MAERCIH
-          </motion.h1>
+            <motion.h1 variants={reveal} className="display max-w-6xl text-[18.5vw] font-semibold sm:text-[15.8vw]" style={{ fontFamily: "var(--font-new-berolina), serif" }}>
+              MAERCIHH
+            </motion.h1>
 
-          <motion.div variants={reveal} className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
-            <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
-              AI Creator <span className="text-zinc-600">•</span> Creative Technologist{' '}
-              <span className="text-zinc-600">•</span> Prompt Engineer
-            </p>
-            <div className="flex items-start gap-3 md:justify-self-end">
-              <a href="#projects" className="group flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">
-                View Work <ArrowDownRight size={16} className="transition group-hover:translate-y-0.5" />
-              </a>
-              <a href="#contact" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium transition hover:bg-white/10">
-                Contact
-              </a>
-            </div>
+            <motion.div variants={reveal} className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
+              <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
+                Exploring the frontier of generative AI through images, videos, and prompts.
+              </p>
+              <div className="flex items-start gap-3 md:justify-self-end">
+                <a href="#projects" className="group flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">
+                  View Work <ArrowDownRight size={16} className="transition group-hover:translate-y-0.5" />
+                </a>
+                <a href="#contact" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium transition hover:bg-white/10">
+                  Contact
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/0 to-black/60" />
+            <Image
+              src="/portrait.jpg"
+              alt="Portrait of MAERCIHH"
+              width={1200}
+              height={1400}
+              className="h-full w-full object-cover object-center opacity-90 grayscale"
+              priority
+            />
+          </motion.div>
+        </div>
       </section>
 
       <section id="projects" className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
         <SectionHeading number="01" label="Selected work" title="Ideas in motion." copy="A collection of cinematic experiments, visual systems, and stories shaped with emerging tools." />
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((p, i) => (
-            <motion.article
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3 }}
-              key={p.title}
-              className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900"
-            >
+            <motion.article whileHover={{ y: -6 }} transition={{ duration: 0.3 }} key={p.title} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900">
               <div className={`absolute inset-0 bg-gradient-to-br ${p.tone} transition duration-700 group-hover:scale-110`} />
               <div className="noise absolute inset-0 opacity-30" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -108,14 +117,14 @@ export default function Home() {
         <div className="eyebrow">03 — About</div>
         <div>
           <h2 className="max-w-3xl text-4xl font-medium leading-[.95] tracking-[-.065em] sm:text-6xl">
-            I turn emerging technology into emotionally resonant experiences.
+            Exploring the frontier of generative AI.
           </h2>
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-6 sm:grid-cols-2">
             <p className="text-sm leading-6 text-zinc-400">
-              MAERCIH is an independent AI creator and creative technologist. The practice operates where art direction, moving image, and generative systems meet.
+              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's possible with AI.
             </p>
             <p className="text-sm leading-6 text-zinc-400">
-              From a first prompt to final frame, every project explores a more intuitive, expressive future for creative technology.
+              My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroughs happen through experimentation, iteration, and a relentless drive to learn.
             </p>
           </div>
         </div>
@@ -127,11 +136,11 @@ export default function Home() {
           <h2 className="mt-8 max-w-5xl text-5xl font-medium tracking-[-.07em] sm:text-8xl">
             Let’s make something <em className="font-serif font-normal">unseen.</em>
           </h2>
-          <a href="mailto:hello@maercih.com" className="mt-10 inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm text-white transition hover:bg-zinc-800">
-            hello@maercih.com <ArrowUpRight size={16} />
+          <a href="mailto:maercihh@gmail.com" className="mt-10 inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm text-white transition hover:bg-zinc-800">
+            maercihh@gmail.com <ArrowUpRight size={16} />
           </a>
           <div className="mt-20 flex flex-wrap justify-between gap-5 border-t border-black/15 pt-5 text-sm text-zinc-600">
-            <p>© 2025 MAERCIH. All rights reserved.</p>
+            <p>© 2025 MAERCIHH. All rights reserved.</p>
             <div className="flex gap-5">
               <a className="flex items-center gap-1 hover:text-black" href="https://x.com" target="_blank" rel="noreferrer">
                 <X size={14} /> X
@@ -139,7 +148,7 @@ export default function Home() {
               <a className="flex items-center gap-1 hover:text-black" href="https://github.com" target="_blank" rel="noreferrer">
                 <Github size={14} /> GitHub
               </a>
-              <a className="flex items-center gap-1 hover:text-black" href="mailto:hello@maercih.com">
+              <a className="flex items-center gap-1 hover:text-black" href="mailto:maercihh@gmail.com">
                 <Mail size={14} /> Email
               </a>
             </div>

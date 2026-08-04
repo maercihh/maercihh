@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+export const metadata = { title: "Contact â€” MAERCIHH", description: "Contact MAERCIHH." };
+export default function ContactPage() { return <main className="min-h-screen bg-[#e8e6df] px-5 py-8 text-black sm:px-8"><div className="mx-auto max-w-7xl"><Link href="/" className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-black"><ArrowLeft size={15}/> Back home</Link><p className="eyebrow mt-24 text-zinc-500">Contact</p><h1 className="mt-5 text-6xl font-medium tracking-[-.07em] sm:text-9xl">Letâ€™s talk.</h1><a href="mailto:hello@maercihh.com" className="mt-12 inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm text-white">hello@maercihh.com <ArrowUpRight size={16}/></a></div></main>; }

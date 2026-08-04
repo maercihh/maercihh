@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+export const metadata = { title: "About â€” MAERCIHH", description: "About MAERCIHH, AI Creator and Creative Technologist." };
+export default function AboutPage() { return <main className="min-h-screen px-5 py-8 sm:px-8"><div className="mx-auto max-w-7xl"><Link href="/" className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"><ArrowLeft size={15}/> Back home</Link><p className="eyebrow mt-24">About</p><h1 className="mt-5 max-w-5xl text-5xl font-medium tracking-[-.07em] sm:text-8xl">Technology, with a point of view.</h1><p className="mt-12 max-w-2xl text-lg leading-8 text-zinc-400">MAERCIHH is an independent creator working across AI, art direction, visual storytelling, and creative technology.</p></div></main>; }

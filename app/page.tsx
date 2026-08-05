@@ -20,33 +20,29 @@ export default function Home() {
     <main id="top">
       <SiteHeader />
 
-      <section className="relative overflow-hidden px-5 pb-12 pt-12 sm:px-8 md:pb-16">
+      <section className="relative overflow-visible px-5 pb-12 pt-36 sm:px-8 md:pb-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <div className="relative mx-auto flex min-h-[60vh] w-full max-w-7xl items-start gap-10">
-          <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }} className="relative z-10 flex-1">
+        <div className="relative mx-auto w-full max-w-7xl">
+          <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }} className="relative z-10">
             <motion.p variants={reveal} className="eyebrow mb-6 flex items-center gap-3">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
               Independent Creative Practice — Worldwide
             </motion.p>
 
-            {/* Hero composition: force one-row editorial layout on all viewports */}
-            <div className="flex items-center gap-6 flex-nowrap">
+            {/* Hero grid: always two columns — text left, portrait right; portrait scales with clamps and never stacks */}
+            <div className="hero-grid grid grid-cols-[1fr_auto] items-center gap-6">
               <motion.h1
                 variants={reveal}
-                className="display flex-1 min-w-0 font-semibold leading-[0.86]"
+                className="display heading flex-1 min-w-0 font-semibold leading-[0.86]"
                 style={{ fontFamily: "var(--font-dom-casual), serif" }}
               >
                 MAERCIHH
               </motion.h1>
 
-              <motion.div
-                variants={reveal}
-                className="portrait relative flex-shrink-0 ml-2"
-                aria-hidden
-              >
+              <motion.div variants={reveal} className="portrait relative flex-shrink-0 ml-2 z-20" aria-hidden>
                 <Image
                   src="/portrait.jpg"
                   alt="Portrait of MAERCIHH"

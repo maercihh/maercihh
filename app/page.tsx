@@ -25,20 +25,37 @@ export default function Home() {
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-start gap-10 lg:grid-cols-[1.25fr_0.85fr] lg:items-center">
-          <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }}>
+        <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-end gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+          <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }} className="relative z-10 flex-1">
             <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
               Independent creative practice — Worldwide
             </motion.p>
 
-            <motion.h1
-              variants={reveal}
-              className="display max-w-6xl text-[18.5vw] font-semibold sm:text-[15.8vw]"
-              style={{ fontFamily: "var(--font-dom-casual), serif" }}
-            >
-              MAERCIHH
-            </motion.h1>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-8">
+              <motion.h1
+                variants={reveal}
+                className="display max-w-6xl text-[18.5vw] font-semibold leading-[0.86] sm:text-[15.8vw]"
+                style={{ fontFamily: "var(--font-dom-casual), serif" }}
+              >
+                MAERCIHH
+              </motion.h1>
+
+              <motion.div
+                variants={reveal}
+                className="relative w-full max-w-[280px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur lg:mb-4 lg:-translate-y-2"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-black/15 via-black/0 to-black/70" />
+                <Image
+                  src="/portrait.jpg"
+                  alt="Portrait of MAERCIHH"
+                  width={1200}
+                  height={1400}
+                  className="h-full w-full object-cover object-center grayscale contrast-110"
+                  priority
+                />
+              </motion.div>
+            </div>
 
             <motion.div variants={reveal} className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
               <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
@@ -53,23 +70,6 @@ export default function Home() {
                 </a>
               </div>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur lg:translate-y-8"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-black/25 via-black/0 to-black/70" />
-            <Image
-              src="/portrait.jpg"
-              alt="Portrait of MAERCIHH"
-              width={1200}
-              height={1400}
-              className="h-full w-full object-cover object-center grayscale contrast-110"
-              priority
-            />
           </motion.div>
         </div>
       </section>

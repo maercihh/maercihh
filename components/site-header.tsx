@@ -14,9 +14,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-8">
-      {/* inner pill is centered with a max width and horizontal padding so it never touches the viewport edges */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-8 flex items-center justify-between rounded-full border border-white/10 bg-black/50 py-2 overflow-hidden site-header-pill">
+    // outer header: only vertical spacing so inner pill controls horizontal alignment
+    <header className="fixed inset-x-0 top-0 z-50 pt-4">
+      {/* inner pill: use the same horizontal padding as other page sections (px-5 sm:px-8) so left/right edges align */}
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 flex items-center justify-between rounded-full border border-white/10 bg-black/50 py-2 overflow-hidden site-header-pill">
         {/* Wordmark */}
         <a href="#top" className="flex items-center text-sm font-semibold tracking-[-.05em] min-w-0">
           <span className="block truncate max-w-[35vw] sm:max-w-[160px]">MAERCIHH</span>

@@ -25,14 +25,18 @@ export default function Home() {
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-end gap-12 lg:grid-cols-[1.15fr_0.95fr] lg:items-center">
+        <div className="relative mx-auto grid min-h-screen w-full max-w-7xl items-start gap-10 lg:grid-cols-[1.25fr_0.85fr] lg:items-center">
           <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }}>
             <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
               Independent creative practice — Worldwide
             </motion.p>
 
-            <motion.h1 variants={reveal} className="display max-w-6xl text-[18.5vw] font-semibold sm:text-[15.8vw]" style={{ fontFamily: "var(--font-new-berolina), serif" }}>
+            <motion.h1
+              variants={reveal}
+              className="display max-w-6xl text-[18.5vw] font-semibold sm:text-[15.8vw]"
+              style={{ fontFamily: "var(--font-dom-casual), serif" }}
+            >
               MAERCIHH
             </motion.h1>
 
@@ -55,7 +59,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur"
+            className="relative mx-auto w-full max-w-[640px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur lg:translate-y-8"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-black/25 via-black/0 to-black/70" />
             <Image
@@ -63,7 +67,7 @@ export default function Home() {
               alt="Portrait of MAERCIHH"
               width={1200}
               height={1400}
-              className="h-full w-full object-cover object-center grayscale"
+              className="h-full w-full object-cover object-center grayscale contrast-110"
               priority
             />
           </motion.div>

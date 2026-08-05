@@ -126,7 +126,7 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-6 sm:grid-cols-2">
             <p className="text-sm leading-6 text-zinc-400">
-              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
+              I am an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
             </p>
             <p className="text-sm leading-6 text-zinc-400">
               My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroug[...] 

@@ -25,14 +25,15 @@ export default function Home() {
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-end gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <div className="relative mx-auto flex min-h-screen w-full max-w-7xl items-end justify-between gap-10">
           <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }} className="relative z-10 flex-1">
             <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
-              Independent creative practice — Worldwide
+              Independent Creative Practice — Worldwide
             </motion.p>
 
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-8">
+            {/* Hero composition: text and portrait side-by-side on all viewports */}
+            <div className="flex items-center gap-6">
               <motion.h1
                 variants={reveal}
                 className="display max-w-6xl text-[18.5vw] font-semibold leading-[0.86] sm:text-[15.8vw]"
@@ -43,15 +44,15 @@ export default function Home() {
 
               <motion.div
                 variants={reveal}
-                className="relative w-full max-w-[280px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5 shadow-2xl shadow-black/40 backdrop-blur lg:mb-4 lg:-translate-y-2"
+                className="portrait relative flex-shrink-0"
+                aria-hidden
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-black/15 via-black/0 to-black/70" />
                 <Image
                   src="/portrait.jpg"
                   alt="Portrait of MAERCIHH"
                   width={1200}
                   height={1400}
-                  className="h-full w-full object-cover object-center grayscale contrast-110"
+                  className="portrait-img object-cover object-center"
                   priority
                 />
               </motion.div>
@@ -78,7 +79,7 @@ export default function Home() {
         <SectionHeading number="01" label="Selected work" title="Ideas in motion." copy="A collection of cinematic experiments, visual systems, and stories shaped with emerging tools." />
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((p, i) => (
-            <motion.article whileHover={{ y: -6 }} transition={{ duration: 0.3 }} key={p.title} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900">
+            <motion.article whileHover={{ y: -6 }} transition={{ duration: 0.3 }} key={p.title} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-90[...]">
               <div className={`absolute inset-0 bg-gradient-to-br ${p.tone} transition duration-700 group-hover:scale-110`} />
               <div className="noise absolute inset-0 opacity-30" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -109,7 +110,7 @@ export default function Home() {
           <SectionHeading number="02" label="Collaborations" title="Built alongside the curious." copy="Brand worlds, campaigns, and visual identities for teams rethinking what’s possible." />
           <div className="grid grid-cols-2 border-l border-t border-white/10 sm:grid-cols-4">
             {brands.map((b) => (
-              <div className="flex aspect-[2/1] items-center justify-center border-b border-r border-white/10 text-lg font-semibold tracking-[-.06em] text-zinc-500 transition hover:bg-white hover:text-black" key={b}>
+              <div className="flex aspect-[2/1] items-center justify-center border-b border-r border-white/10 text-lg font-semibold tracking-[-.06em] text-zinc-500 transition hover:bg-white hover[...]" key={b}>
                 {b}
               </div>
             ))}
@@ -125,10 +126,10 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-6 sm:grid-cols-2">
             <p className="text-sm leading-6 text-zinc-400">
-              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's possible with AI.
+              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
             </p>
             <p className="text-sm leading-6 text-zinc-400">
-              My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroughs happen through experimentation, iteration, and a relentless drive to learn.
+              My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroug[...] 
             </p>
           </div>
         </div>

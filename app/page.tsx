@@ -32,7 +32,6 @@ export default function Home() {
               Independent Creative Practice — Worldwide
             </motion.p>
 
-            {/* Hero grid: always two columns — text left, portrait right; portrait scales with clamps and never stacks */}
             <div className="hero-grid grid grid-cols-[1fr_auto] items-center gap-6">
               <motion.h1
                 variants={reveal}
@@ -42,7 +41,8 @@ export default function Home() {
                 MAERCIHH
               </motion.h1>
 
-              <motion.div variants={reveal} className="portrait relative flex-shrink-0 ml-2 z-20" aria-hidden>
+              <motion.div variants={reveal} className="portrait relative flex-shrink-0 ml-2 z-20 overflow-hidden" aria-hidden>
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/15 to-black/70" />
                 <Image
                   src="/portrait.jpg"
                   alt="Portrait of MAERCIHH"
@@ -75,7 +75,7 @@ export default function Home() {
         <SectionHeading number="01" label="Selected work" title="Ideas in motion." copy="A collection of cinematic experiments, visual systems, and stories shaped with emerging tools." />
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((p, i) => (
-            <motion.article whileHover={{ y: -6 }} transition={{ duration: 0.3 }} key={p.title} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-90[...]">
+            <motion.article whileHover={{ y: -6 }} transition={{ duration: 0.3 }} key={p.title} className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900">
               <div className={`absolute inset-0 bg-gradient-to-br ${p.tone} transition duration-700 group-hover:scale-110`} />
               <div className="noise absolute inset-0 opacity-30" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -106,7 +106,7 @@ export default function Home() {
           <SectionHeading number="02" label="Collaborations" title="Built alongside the curious." copy="Brand worlds, campaigns, and visual identities for teams rethinking what’s possible." />
           <div className="grid grid-cols-2 border-l border-t border-white/10 sm:grid-cols-4">
             {brands.map((b) => (
-              <div className="flex aspect-[2/1] items-center justify-center border-b border-r border-white/10 text-lg font-semibold tracking-[-.06em] text-zinc-500 transition hover:bg-white hover[...]" key={b}>
+              <div className="flex aspect-[2/1] items-center justify-center border-b border-r border-white/10 text-lg font-semibold tracking-[-.06em] text-zinc-500 transition hover:bg-white hover:text-black" key={b}>
                 {b}
               </div>
             ))}
@@ -122,10 +122,10 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-6 sm:grid-cols-2">
             <p className="text-sm leading-6 text-zinc-400">
-              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
+              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's possible with AI.
             </p>
             <p className="text-sm leading-6 text-zinc-400">
-              My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroug[...] 
+              My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroughs happen through experimentation, iteration, and a relentless drive to learn.
             </p>
           </div>
         </div>

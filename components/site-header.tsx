@@ -14,34 +14,35 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    // outer header: only vertical spacing so inner pill controls horizontal alignment
+    // outer header: only vertical spacing so inner elements control horizontal alignment
     <header className="fixed inset-x-0 top-0 z-50 pt-4">
-      {/* inner pill: use the same horizontal padding as other page sections (px-5 sm:px-8) so left/right edges align */}
-      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 flex items-center justify-between rounded-full border border-white/10 bg-black/50 py-2 overflow-hidden site-header-pill">
-        {/* Wordmark */}
-        <a href="#top" className="flex items-center text-sm font-semibold tracking-[-.05em] min-w-0">
-          <span className="block truncate max-w-[35vw] sm:max-w-[160px]">MAERCIHH</span>
-          <span className="ml-2 text-zinc-500">®</span>
-        </a>
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 flex items-center justify-between">
+        {/* Left: compact pill (only as wide as its contents) so it aligns with page gutters */}
+        <div className="inline-flex items-center rounded-full border border-white/10 bg-black/50 py-2 px-4 site-header-pill">
+          <a href="#top" className="flex items-center text-sm font-semibold tracking-[-.05em] min-w-0">
+            <span className="block truncate max-w-[35vw] sm:max-w-[160px]">MAERCIHH</span>
+            <span className="ml-2 text-zinc-500">®</span>
+          </a>
+        </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <a key={link.label} className="text-xs text-zinc-400 transition hover:text-white" href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* Right: desktop nav / CTA and mobile toggle */}
+        <div className="flex items-center gap-4">
+          <nav className="hidden items-center gap-6 md:flex">
+            {links.map((link) => (
+              <a key={link.label} className="text-xs text-zinc-400 transition hover:text-white" href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        {/* CTA (desktop) */}
-        <a href="/contact" className="hidden rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:bg-zinc-200 md:block">
-          Let's talk
-        </a>
+          <a href="/contact" className="hidden rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:bg-zinc-200 md:block">
+            Let's talk
+          </a>
 
-        {/* Mobile menu button */}
-        <button aria-label="Toggle navigation" onClick={() => setOpen(!open)} className="ml-3 md:hidden">
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+          <button aria-label="Toggle navigation" onClick={() => setOpen(!open)} className="ml-3 md:hidden">
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

@@ -20,7 +20,7 @@ export default function Home() {
     <main id="top">
       <SiteHeader />
 
-      <section className="relative overflow-hidden px-5 pb-12 pt-36 sm:px-8 md:pb-16">
+      <section className="relative overflow-visible px-5 pb-12 pt-36 sm:px-8 md:pb-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
@@ -32,49 +32,43 @@ export default function Home() {
               Independent Creative Practice — Worldwide
             </motion.p>
 
-            <div className="relative min-h-[68vh] sm:min-h-[72vh] md:min-h-[78vh]">
+            <div className="hero-grid grid grid-cols-[1fr_auto] items-center gap-6">
               <motion.h1
                 variants={reveal}
-                className="display relative z-20 max-w-[10ch] font-semibold leading-[0.86]"
+                className="display heading flex-1 min-w-0 font-semibold leading-[0.86]"
                 style={{ fontFamily: "var(--font-dom-casual), serif" }}
               >
                 MAERCIHH
               </motion.h1>
 
-              <motion.div
-                variants={reveal}
-                className="pointer-events-none absolute right-0 top-[8%] z-10 w-[42vw] max-w-[520px] min-w-[170px] sm:w-[34vw] md:w-[30vw] lg:w-[28vw]"
-                aria-hidden
-              >
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/5 to-black/95" />
-                  <div className="absolute inset-y-0 left-0 w-[48%] bg-gradient-to-r from-black via-black/20 to-transparent" />
-                  <div className="absolute inset-0 [mask-image:linear-gradient(to_left,transparent_0%,black_16%,black_78%,transparent_100%)] bg-black/10" />
-                  <Image
-                    src="/portrait.jpg"
-                    alt="Portrait of MAERCIHH"
-                    fill
-                    sizes="(max-width: 768px) 42vw, 30vw"
-                    className="object-cover object-center grayscale contrast-110 opacity-90"
-                    priority
-                  />
-                </div>
-              </motion.div>
-
-              <motion.div variants={reveal} className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
-                <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
-                  Exploring the frontier of generative AI through images, videos, and prompts.
-                </p>
-                <div className="flex items-start gap-3 md:justify-self-end">
-                  <a href="#projects" className="group flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">
-                    View Work <ArrowDownRight size={16} className="transition group-hover:translate-y-0.5" />
-                  </a>
-                  <a href="#contact" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium transition hover:bg-white/10">
-                    Contact
-                  </a>
-                </div>
+              <motion.div variants={reveal} className="portrait relative flex-shrink-0 ml-2 z-20 overflow-hidden" aria-hidden>
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/10 to-black/95" />
+                <div className="absolute inset-y-0 left-0 w-[42%] bg-gradient-to-r from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 [mask-image:linear-gradient(to_left,transparent_0%,black_18%,black_100%)]" />
+                <Image
+                  src="/portrait.jpg"
+                  alt="Portrait of MAERCIHH"
+                  width={1200}
+                  height={1400}
+                  className="portrait-img object-cover object-center"
+                  priority
+                />
               </motion.div>
             </div>
+
+            <motion.div variants={reveal} className="mt-8 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
+              <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
+                Exploring the frontier of generative AI through images, videos, and prompts.
+              </p>
+              <div className="flex items-start gap-3 md:justify-self-end">
+                <a href="#projects" className="group flex items-center gap-3 rounded-full bg-white px-5 py-3 text-sm font-medium text-black">
+                  View Work <ArrowDownRight size={16} className="transition group-hover:translate-y-0.5" />
+                </a>
+                <a href="#contact" className="rounded-full border border-white/20 px-5 py-3 text-sm font-medium transition hover:bg-white/10">
+                  Contact
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

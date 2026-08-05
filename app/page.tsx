@@ -42,7 +42,9 @@ export default function Home() {
               </motion.h1>
 
               <motion.div variants={reveal} className="portrait relative flex-shrink-0 ml-2 z-20 overflow-hidden" aria-hidden>
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/15 to-black/70" />
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/10 to-black/95" />
+                <div className="absolute inset-y-0 left-0 w-[42%] bg-gradient-to-r from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 [mask-image:linear-gradient(to_left,transparent_0%,black_18%,black_100%)]" />
                 <Image
                   src="/portrait.jpg"
                   alt="Portrait of MAERCIHH"

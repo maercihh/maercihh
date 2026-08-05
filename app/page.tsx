@@ -20,23 +20,23 @@ export default function Home() {
     <main id="top">
       <SiteHeader />
 
-      <section className="relative overflow-hidden px-5 pb-12 pt-36 sm:px-8 md:pb-16">
+      <section className="relative overflow-hidden px-5 pb-12 pt-12 sm:px-8 md:pb-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="noise absolute inset-0 opacity-30" />
         <div className="absolute -right-24 top-20 h-[34rem] w-[34rem] rounded-full bg-violet-500/20 blur-[130px]" />
 
-        <div className="relative mx-auto flex min-h-screen w-full max-w-7xl items-end justify-between gap-10">
+        <div className="relative mx-auto flex min-h-[60vh] w-full max-w-7xl items-start gap-10">
           <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }} className="relative z-10 flex-1">
-            <motion.p variants={reveal} className="eyebrow mb-8 flex items-center gap-3">
+            <motion.p variants={reveal} className="eyebrow mb-6 flex items-center gap-3">
               <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300" />
               Independent Creative Practice — Worldwide
             </motion.p>
 
-            {/* Hero composition: text and portrait side-by-side on all viewports */}
-            <div className="flex items-center gap-6">
+            {/* Hero composition: force one-row editorial layout on all viewports */}
+            <div className="flex items-center gap-6 flex-nowrap">
               <motion.h1
                 variants={reveal}
-                className="display max-w-6xl text-[18.5vw] font-semibold leading-[0.86] sm:text-[15.8vw]"
+                className="display flex-1 min-w-0 font-semibold leading-[0.86]"
                 style={{ fontFamily: "var(--font-dom-casual), serif" }}
               >
                 MAERCIHH
@@ -44,7 +44,7 @@ export default function Home() {
 
               <motion.div
                 variants={reveal}
-                className="portrait relative flex-shrink-0"
+                className="portrait relative flex-shrink-0 ml-2"
                 aria-hidden
               >
                 <Image
@@ -58,7 +58,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <motion.div variants={reveal} className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
+            <motion.div variants={reveal} className="mt-8 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1fr]">
               <p className="max-w-md text-lg leading-7 text-zinc-300 sm:text-xl">
                 Exploring the frontier of generative AI through images, videos, and prompts.
               </p>
@@ -126,7 +126,7 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid gap-8 border-t border-white/10 pt-6 sm:grid-cols-2">
             <p className="text-sm leading-6 text-zinc-400">
-              I am an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
+              I'm an independent AI creator focused on generative images, cinematic videos, and prompt engineering. I explore new models, experiment with creative workflows, and share what's poss[...] 
             </p>
             <p className="text-sm leading-6 text-zinc-400">
               My work is rooted in exploration, combining emerging AI models with thoughtful design to create compelling visuals and immersive experiences. I believe the most exciting breakthroug[...] 
